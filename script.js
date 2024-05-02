@@ -45,9 +45,12 @@ function addErrorIcon(inputElement) {
 	errorIcon.alt = "Error";
 	errorIcon.classList.add("error-icon");
 	errorIcon.style.position = "absolute";
-	var containerRect = inputElement.getBoundingClientRect();
-	errorIcon.style.top = containerRect.top + 14 + "px";
-	errorIcon.style.right = window.innerWidth - containerRect.right + 15 + "px";
+	var containerRect = getElementPosition(inputElement);
+	console.log(inputElement.clientHeight);
+	errorIcon.style.top =
+		containerRect.top + 0.32 * inputElement.clientHeight + "px";
+	errorIcon.style.left =
+		containerRect.left + 0.9 * inputElement.clientWidth + "px";
 	errorIcon.style.width = "20px";
 	inputElement.parentNode.insertBefore(errorIcon, inputElement.nextSibling);
 }
@@ -63,4 +66,14 @@ function removeErrorIcon(inputElement) {
 	if (errorIcon) {
 		errorIcon.parentNode.removeChild(errorIcon);
 	}
+}
+function getElementPosition(element) {
+	const rect = element.getBoundingClientRect();
+	const scrollLeft = window.scrollX || document.documentElement.scrollLeft;
+	const scrollTop = window.scrollY || document.documentElement.scrollTop;
+
+	const left = rect.left + scrollLeft;
+	const top = rect.top + scrollTop;
+
+	return { left, top };
 }
