@@ -7,6 +7,14 @@ An error icon is displayed when the input is invalid or left empty.
 
 ![Desktop Preview of Website](/assets/desktop-preview.png)
 
+## Preview on Desktop with error icons
+
+![Desktop Preview of Website with errors](/assets/desktop-preview-with-error.png)
+
 ## Preview on Mobile:
 
-![Mobile Preview of Website](/assets/desktop-preview.png)
+![Mobile Preview of Website](/assets/mobile-preview.png)
+
+## Preview on Mobile with error icons
+
+![Mobile Preview of Website with errors](/assets/mobile-preview-with-error.png)
